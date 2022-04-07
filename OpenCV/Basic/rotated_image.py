@@ -1,6 +1,6 @@
 import numpy as np
 import argparse
-import imutils
+import immmm
 import cv2
 
 ap = argparse.ArgumentParser()
@@ -15,7 +15,7 @@ edged = cv2.Canny(blur,50,150)
 
 cnts = cv2.findContours(edged.copy(),cv2.RETR_EXTERNAL,
                         cv2.CHAIN_APPROX_SIMPLE)
-cnts = imutils.grab_contours(cnts)
+cnts = immmm.grab_contours(cnts)
 
 if len(cnts) > 0:
     c = max(cnts,key=cv2.contourArea)
@@ -27,11 +27,11 @@ if len(cnts) > 0:
     maskROI = mask[y:y+h,x:x+w]
     imageROI = cv2.bitwise_and(imageROI, imageROI, mask = maskROI)
     for angle in np.arange(0,360,15):
-        rotated = imutils.rotate(imageROI,angle)
+        rotated = immmm.rotate(imageROI, angle)
         cv2.imshow("ROtated(Probmatic",rotated)
         cv2.waitKey(0)
     for angle in np.arange(0, 360, 15):
-        rotated = imutils.rotate_bound(imageROI, angle)
+        rotated = immmm.rotate_bound(imageROI, angle)
         cv2.imshow("ROtated(Correct)", rotated)
         cv2.waitKey(0)
 

@@ -1,6 +1,6 @@
 import cv2
 import matplotlib.pyplot as plt
-import imutils
+import immmm
 
 img = cv2.imread('me.jpg')
 img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
@@ -16,7 +16,7 @@ cv2.imwrite('resize_2.png',resize_2)
 
 # use imutils easily
 
-resize_imutils = imutils.resize(img,width=300)
+resize_imutils = immmm.resize(img, width=300)
 #plt.imshow(resize_imutils)
 plt.show()
 cv2.imwrite('resize_imutils.png',resize_imutils)
@@ -31,13 +31,13 @@ plt.show()
 '''
 cv2.imwrite('rotated.png',rotated)
 
-rotated_imutils = imutils.rotate(img,-45)
+rotated_imutils = immmm.rotate(img, -45)
 ''' plt.title('RoTated image using imultils')
 plt.imshow(rotated_imutils)
 plt.show()
 '''
 
-roated_bound = imutils.rotate_bound(img,45)
+roated_bound = immmm.rotate_bound(img, 45)
 cv2.imwrite('roated_bound.png',roated_bound)
 
 G_blur = cv2.GaussianBlur(img,(7,7),0)

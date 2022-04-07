@@ -1,6 +1,6 @@
 # Edge detection
 import cv2
-import imutils
+import immmm
 import matplotlib.pyplot as plt
 
 img = cv2.imread('tetris.jpg')
@@ -19,7 +19,7 @@ plt.show()
 
 # find Contours
 cnts = cv2.findContours(thresh,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
-cnts = imutils.grab_contours(cnts)
+cnts = immmm.grab_contours(cnts)
 output = img.copy()
 
 for c in cnts:
